@@ -1,0 +1,18 @@
+version: '3'
+services:
+  event-gateway-workshop:
+    build:
+      context: ./
+    working_dir: /app
+    volumes:
+      - .:/app
+      - ~/.aws/:/root/.aws
+      - ~/.gcloud/:/root/.gcloud
+    expose:
+      - '3000'
+      - '4000'
+      - '4001'
+    ports:
+      - '3000:3000'
+      - '4000:4000'
+      - '4001:4001'
