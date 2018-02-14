@@ -1,0 +1,17 @@
+{
+  "name": "newsletter-service",
+  "version": "0.1.0",
+  "description": "Newsletter service.",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "serverless.com",
+  "license": "MIT",
+  "dependencies": {
+    "@serverless/fdk": "^0.3.5"
+  },
+  "devDependencies": {
+    "serverless-remove-forced-login": "0.1.0"
+  }
+}

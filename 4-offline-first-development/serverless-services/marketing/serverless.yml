@@ -1,0 +1,24 @@
+service: marketing
+
+plugins:
+  - serverless-google-cloudfunctions
+  - serverless-remove-forced-login
+
+custom:
+  eventGatewayUrl: "http://localhost:4000"
+  eventGatewayConfigUrl: "http://localhost:4001"
+
+provider:
+  name: google
+  runtime: nodejs
+  project: marketing-department-utils
+  credentials: ~/.gcloud/keyfile.json
+  environment:
+    EVENT_GATEWAY_URL: ${self:custom.eventGatewayUrl}
+    EVENT_GATEWAY_CONFIG_URL: ${self:custom.eventGatewayConfigUrl}
+
+functions:
+  vipNotifier:
+    handler: vipNotifier
+    events:
+      - update.me
