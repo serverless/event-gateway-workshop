@@ -1,0 +1,6 @@
+{
+  "CREDENTIALS_FILE": "credentials.json",
+  "PROJECT_ID": "replace-me",
+  "DATASET_ID": "emit_demo",
+  "TABLE_ID": "test_events"
+}

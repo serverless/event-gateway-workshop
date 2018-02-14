@@ -1,0 +1,31 @@
+# users-api crud service
+
+service:
+  name: users
+  description: 'Users CRUD service.'
+
+plugins:
+  - serverless-remove-forced-login
+
+custom:
+  eventGatewayUrl: "http://localhost:4000"
+  eventGatewayConfigUrl: "http://localhost:4001"
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: prod
+  region: us-east-1
+  environment:
+    EVENT_GATEWAY_URL: ${self:custom.eventGatewayUrl}
+    EVENT_GATEWAY_CONFIG_URL: ${self:custom.eventGatewayConfigUrl}
+
+functions:
+  register:
+    handler: handler.register
+    events:
+      - http:
+          path: /users
+          method: POST
+          # cors has to be commented out until we change how data is sent to the Event Gateway
+          # cors: true

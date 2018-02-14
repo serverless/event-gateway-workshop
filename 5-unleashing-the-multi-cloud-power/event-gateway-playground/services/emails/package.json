@@ -1,0 +1,18 @@
+{
+  "name": "email-service",
+  "version": "1.0.0",
+  "description": "E-Mail service.",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "serverless.com",
+  "license": "MIT",
+  "dependencies": {
+    "mailgun-js": "^0.11.2",
+    "@serverless/fdk": "^0.3.5"
+  },
+  "devDependencies": {
+    "serverless-remove-forced-login": "^0.1.0"
+  }
+}

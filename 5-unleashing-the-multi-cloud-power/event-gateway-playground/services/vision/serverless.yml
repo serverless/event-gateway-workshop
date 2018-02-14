@@ -1,0 +1,19 @@
+service: vision
+
+plugins:
+  - serverless-google-cloudfunctions
+  - serverless-remove-forced-login
+
+provider:
+  name: google
+  runtime: nodejs
+  project: ${file(./config.json):PROJECT_ID}
+  credentials: ~/.gcloud/keyfile.json
+  environment:
+    API_KEY: ${file(./config.json):API_KEY}
+
+functions:
+  annotate:
+    handler: annotateUser
+    events:
+      - user.registered

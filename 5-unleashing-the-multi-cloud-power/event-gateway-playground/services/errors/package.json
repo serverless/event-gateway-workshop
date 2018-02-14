@@ -1,0 +1,14 @@
+{
+  "name": "errors-service",
+  "version": "1.0.0",
+  "description": "Errors service.",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "serverless.com",
+  "license": "MIT",
+  "devDependencies": {
+    "serverless-remove-forced-login": "^0.1.0"
+  }
+}
