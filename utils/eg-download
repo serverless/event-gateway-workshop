@@ -1,0 +1,3 @@
+#!/bin/bash
+
+curl https://raw.githubusercontent.com/serverless/event-gateway/master/install.sh | sh
