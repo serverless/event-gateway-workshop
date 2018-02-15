@@ -29,6 +29,6 @@ In this guide you'll see how you can implement error-handling with the help of t
 
 **Note:** When working through the guide keep in mind that there's a `frontend` directory which includes the webapp for the Event Gateway Playground! Watch the Event Gateways terminal output when interacting with it.
 
-## Questions / Tasks
+---
 
-* That's it! Congratulations. You've just finished the Event Gateway Workshop and should have a good understanding of the Event Gateway and the opportunities it enables!
+> That's it! Congratulations. You've just finished the Event Gateway Workshop and should have a good understanding of the Event Gateway and the opportunities it enables!

@@ -45,9 +45,10 @@ Run `curl http://localhost:4001/v1/subscriptions` to see all subscriptions. You 
 
 Run `ctrl + c` to stop the Event Gateway.
 
-## Questions / Tasks
+## Questions
 
 1. How would you run the Event Gateway locally with enabled debugging logs?
 1. What's the difference between the "Configuration API" and the "Events API"?
 1. What is the `FDK`?
 1. What steps do I need to take to make a remote function callable via the Event Gateway?
+1. What role does `etcd` play?

@@ -122,14 +122,20 @@ curl --request POST \
 
 Switch back to the terminal where the Event Gateway is running. You should now see that the Event Gateway received the event, invoked the function remotely and streamed back the result of the function invocation to the terminal.
 
-### Cleanup
+## Tasks
+
+1. Create a new `goodbye` function which also subscribes to the `greet.me` event
+1. Test the new `goodbye` function by emitting the `greet.me` event
+1. Remove the `greet.me` subscription for the `hello` function
+
+## Cleanup
 
 Stop the Event Gateway by running `ctrl + c`.
 Remove the Event Gateway config via `rm -rf ../default.etcd`
 
 Remove the `serverless-sevice` by running `serverless remove` in the `serverless-service` directory.
 
-## Questions / Tasks
+## Questions
 
 1. What's the main difference between a function call done via `http` and a custom `event`?
 1. Other departments are registering several functions and subscriptions on a daily basis. You want to create a simple function discovery platform so that everyone can see what the Event Gateway currently exposes. How could you do that?

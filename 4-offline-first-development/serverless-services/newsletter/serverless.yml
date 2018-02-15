@@ -20,4 +20,4 @@ functions:
   register:
     handler: handler.register
     events:
-      - update.me
+      - some.event

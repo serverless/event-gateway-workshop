@@ -21,4 +21,4 @@ functions:
   vipNotifier:
     handler: vipNotifier
     events:
-      - update.me
+      - some.event

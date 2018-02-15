@@ -18,7 +18,7 @@ const vipEmailAddresses = [
 function checkForVip(email) {
   if (vipEmailAddresses.indexOf(email) > -1) {
     return eventGateway.emit({
-      event: "update.me",
+      event: "some.event",
       data: {
         email: email
       }

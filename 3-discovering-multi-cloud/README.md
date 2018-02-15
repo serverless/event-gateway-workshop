@@ -167,7 +167,16 @@ curl --request POST \
 
 Watch the Event Gateways debugging logs to see the functions response!
 
-### Cleanup
+## Tasks
+
+1. Create a new `goodbye` function and deploy it to AWS
+1. Register the `goodbye` function as a `http` function type (does your `goodbye` function need some config changes?)
+1. Create a new subscription for the `goodbye` function which subscribes to the `aws.goodbye` event
+1. Invoke the `goodbye` function by emitting the `aws.goodbye` event
+1. Deregister the AWS `hello` function from the Event Gateway
+1. Remove the `aws.hello` subscription from the Event Gateway
+
+## Cleanup
 
 Stop the Event Gateway by running `ctrl + c`.
 Remove the Event Gateway config via `rm -rf ../default.etcd`
@@ -175,7 +184,7 @@ Remove the Event Gateway config via `rm -rf ../default.etcd`
 Remove the `aws` service by running `serverless remove` in the `serverless-servics/aws` directory.
 Remove the `gcloud` service by running `serverless remove` in the `serverless-services/gcloud` directory.
 
-## Questions / Tasks
+## Questions
 
 1. Is there any difference when registering an AWS function vs. a Google Cloud Function? What does that mean for FaaS in general?
 1. Invoke the AWS function and the Google Cloud Function again and keep an eye on the response time. Can you spot any difference?

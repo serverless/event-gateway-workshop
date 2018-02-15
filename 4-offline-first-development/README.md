@@ -128,7 +128,15 @@ It's as simple as running `serverless emit --name user.registered --data '{ "ema
 
 Check the terminal window where the Event Gateway is running to see the Event Gateways debugging log entries.
 
-## Questions / Tasks
+## Tasks
 
-1. The Marketing department decided to introduce a new `marketing.celebrity` event which should trigger the `vipNotifier` function. Which parts of the codebase needs to be updated so that the `vipNotifier` function is invoked every time this event hits the Event Gateway.
-2. Furthermore the Marketing department decided to deprecate the `marketing.vip` event since "VIP" is a too broad term. At the same time it don't want to loose any existing data-deliveries to `marketing.vip` for the upcoming 3 months. How could you implement such a migration strategy? How can the Event Gateway help you with that?
+1. There's a special VIP called `server@less.com`. Update the function code to filter out that VIP and emit a `marketing.serverless` event
+1. The marketing team wants a special `serverlessNotifier` function which is only triggered when the `marketing.serverless` event is emitted. Implement the new `serverlessNotifier` function and ensure that it's called when the `marketing.serverless` event is emitted
+1. The Marketing department decided to introduce a new `marketing.celebrity` event which should trigger the `vipNotifier` function. Update the code so that the `vipNotifier` function is invoked every time this new event is emitted to the Event Gateway.
+1. the Marketing department decided to deprecate the `marketing.vip` and `marketing.celebrity` events and replace them with the `marketing.notify` event (all future data will be delivered using this event). At the same time it don't want to lose any existing data-deliveries to `marketing.vip` and `marketing.celebrity`. Introduce the new `marketing.notify` event and ensure that `marketing.vip` and `marketing.celebrity` events are correctly redirected.
+
+## Questions
+
+1. Which parts of your current infrastructure could you replace with such an event-driven workflow?
+1. Can you think of any challenges you might face when dealing with such event-driven workflows?
+1. What functionality could help you tackle those challenges?

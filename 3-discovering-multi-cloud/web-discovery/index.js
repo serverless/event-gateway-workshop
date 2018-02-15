@@ -1,11 +1,10 @@
 const apiVersion = "v1";
-const configUrl = "http://update.me";
+const configUrl = "http://eventgateway.url";
 
 function getFunctions() {
   return fetch(`${configUrl}/${apiVersion}/functions`).then(resp =>
     resp.json().then(data => {
       console.log("functions");
-      console.log(data);
     })
   );
 }
@@ -14,7 +13,6 @@ function getSubscriptions() {
   return fetch(`${configUrl}/${apiVersion}/subscriptions`).then(resp =>
     resp.json().then(data => {
       console.log("subscriptions");
-      console.log(data);
     })
   );
 }
@@ -34,7 +32,7 @@ function getSubscriptions() {
       } else {
         let table =
           '<table class="u-full-width"><thead><tr><th>Function ID</th></tr></thead></thead><tbody>#{items}</tbody></table>';
-        const items = funcs.map(func => `<tr><td>${func.functionId}</td></tr>`);
+        const items = funcs.map(func => `<tr><td></td></tr>`);
         table = table.replace("#{items}", items.join(""));
         funcsDiv.innerHTML = table;
       }
@@ -45,10 +43,7 @@ function getSubscriptions() {
       } else {
         let table =
           '<table class="u-full-width"><thead><tr><th>Function ID</th><th>Subscription ID</th></tr></thead></thead><tbody>#{items}</tbody></table>';
-        const items = subs.map(
-          sub =>
-            `<tr><td>${sub.functionId}</td><td>${sub.subscriptionId}</td></tr>`
-        );
+        const items = subs.map(sub => `<tr><td></td><td></td></tr>`);
         table = table.replace("#{items}", items.join(""));
         subsDiv.innerHTML = table;
       }
