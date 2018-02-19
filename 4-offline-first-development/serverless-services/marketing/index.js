@@ -1,6 +1,6 @@
 "use strict";
 
-exports.vipDetector = (event, callback) => {
+exports.vipNotifier = (event, callback) => {
   const email = event.data.email;
 
   return callback(null, {
